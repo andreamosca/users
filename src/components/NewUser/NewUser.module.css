@@ -1,0 +1,29 @@
+.controls {
+  display: block;
+}
+
+.control {
+  margin-bottom: 1rem;
+}
+.control label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.control input {
+  font: inherit;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.actions button{
+  font: inherit;
+  cursor: pointer;
+  padding: 13px 20px;
+  border: 1px solid #111;
+  background-color: #111;
+  color: white;
+}
