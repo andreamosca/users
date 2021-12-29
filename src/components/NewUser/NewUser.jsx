@@ -22,8 +22,9 @@ const NewUser = (props) => {
       <form onSubmit={handleSubmit}>
         <div className={styles.controls}>
           <div className={styles.control}>
-            <label>Name</label>
+            <label htmlFor="username">Name</label>
             <input
+              id="username"
               value={name}
               onChange={handleNameChange}
               type="text"
@@ -31,8 +32,9 @@ const NewUser = (props) => {
             />
           </div>
           <div className={styles.control}>
-            <label>Age (Years)</label>
+            <label htmlFor="age">Age (Years)</label>
             <input
+              id="age"
               value={age}
               onChange={handleAgeChange}
               type="number"
