@@ -16,6 +16,8 @@ const NewUser = (props) => {
       name: name,
       age: age
     });
+    setName("");
+    setAge("");
   };
   const handleNameChange = (event) => setName(event.target.value);
   const handleAgeChange = (event) => setAge(event.target.value);
