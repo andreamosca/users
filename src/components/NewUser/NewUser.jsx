@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+
 import Card from "../UI/Card";
+import Button from "../UI/Button";
 
 import styles from "./NewUser.module.css";
 
@@ -43,7 +45,7 @@ const NewUser = (props) => {
           </div>
         </div>
         <div className={styles.actions}>
-          <button type="submit">Aggiungi Utente</button>
+          <Button type="submit">Aggiungi Utente</Button>
         </div>
       </form>
     </Card>

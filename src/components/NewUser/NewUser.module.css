@@ -21,12 +21,3 @@
   border: 1px solid #ccc;
   width: 100%;
 }
-
-.actions button{
-  font: inherit;
-  cursor: pointer;
-  padding: 13px 20px;
-  border: 1px solid #111;
-  background-color: #111;
-  color: white;
-}
