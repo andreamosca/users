@@ -5,10 +5,9 @@ import Card from "./Card";
 import Button from "./Button";
 
 const ErrModal = (props) => {
-
   return (
     <div style={{display: "block"}}>
-      <div className={styles.background}></div>
+      <div className={styles.background} onClick={props.onClose}></div>
       <Card className={styles.dialog}>
         <header>
           <h2>{props.title}</h2>
@@ -19,7 +18,7 @@ const ErrModal = (props) => {
           </p>
         </main>
         <footer className={styles.footer}>
-          <Button>{props.action}</Button>
+          <Button onClick={props.onClose}>{props.action}</Button>
         </footer>
       </Card>
     </div>

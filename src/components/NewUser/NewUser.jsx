@@ -9,13 +9,24 @@ import styles from "./NewUser.module.css";
 const NewUser = (props) => {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
+  const [error, setError] = useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     if (name.trim().length === 0) {
+      setError({
+        title: "Ops.. si è verificato un errore",
+        content: "Inserisci il nome dell'utente!",
+        action: "OK",
+      });
       return;
     }
     if (age.trim().length > 0 && +age < 0) {
+      setError({
+        title: "Ops.. si è verificato un errore",
+        content: "L'età inserita non è valida",
+        action: "OK",
+      });
       return;
     }
     props.onUserCreate({
@@ -26,11 +37,21 @@ const NewUser = (props) => {
     setName("");
     setAge("");
   };
+
   const handleNameChange = (event) => setName(event.target.value);
   const handleAgeChange = (event) => setAge(event.target.value);
+  const handleCloseErrModal = () => setError(null);
+
   return (
     <div>
-      <ErrModal title="Ops.. si è verificato un errore" content="Attento alla validazione!" action="OK"/>
+      {error && (
+        <ErrModal
+          title={error.title}
+          content={error.content}
+          action={error.action}
+          onClose={handleCloseErrModal}
+        />
+      )}
       <Card className={styles.newUser}>
         <form onSubmit={handleSubmit}>
           <div className={styles.controls}>
