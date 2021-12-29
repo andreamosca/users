@@ -14,6 +14,9 @@ const NewUser = (props) => {
     if(name.trim().length === 0){
       return;
     }
+    if(age.trim().length > 0 && +age < 0){
+      return;
+    }
     props.onUserCreate({
       id: Math.random(),
       name: name,
