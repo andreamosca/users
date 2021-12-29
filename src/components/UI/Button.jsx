@@ -3,9 +3,7 @@ import React from "react";
 import styles from "./Button.module.css";
 
 const Button = (props) => {
-  let classes = styles.button;
-  classes += " " + props.className;
-
+  const classes =  props.className ? styles.button + " " + props.className : styles.button;
   return (
     <button
       type={props.type || "button"}
