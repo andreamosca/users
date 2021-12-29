@@ -7,7 +7,7 @@ import Button from "./Button";
 const ErrModal = (props) => {
 
   return (
-    <div style={{display: props.visible ? "block": "none"}}>
+    <div style={{display: "block"}}>
       <div className={styles.background}></div>
       <Card className={styles.dialog}>
         <header>

@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import NewUser from "./components/NewUser/NewUser";
 import UserList from "./components/UserList";
 import Container from "./components/UI/Container";
-import ErrModal from "./components/UI/ErrModal";
 
 const DUMMY = [
   { name: "Andrea", age: "21", id: Math.random().toString() },
@@ -17,13 +16,10 @@ function App() {
   const handleUserCreate = (newUser) => setUsers((prev) => [newUser, ...prev]);
 
   return (
-    <div>
     <Container className="main">
       <NewUser onUserCreate={handleUserCreate}></NewUser>
       <UserList users={users} />
     </Container>
-    <ErrModal/>
-    </div>
   );
 }
 
