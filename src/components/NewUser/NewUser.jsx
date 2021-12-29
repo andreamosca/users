@@ -11,6 +11,9 @@ const NewUser = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if(name.trim().length === 0){
+      return;
+    }
     props.onUserCreate({
       id: Math.random(),
       name: name,
@@ -32,7 +35,6 @@ const NewUser = (props) => {
               value={name}
               onChange={handleNameChange}
               type="text"
-              required
             />
           </div>
           <div className={styles.control}>
@@ -42,7 +44,6 @@ const NewUser = (props) => {
               value={age}
               onChange={handleAgeChange}
               type="number"
-              required
             />
           </div>
         </div>
