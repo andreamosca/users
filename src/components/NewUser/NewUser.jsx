@@ -30,7 +30,7 @@ const NewUser = (props) => {
   const handleAgeChange = (event) => setAge(event.target.value);
   return (
     <div>
-      <ErrModal/>
+      <ErrModal title="Ops.. si è verificato un errore" content="Attento alla validazione!" action="OK"/>
       <Card className={styles.newUser}>
         <form onSubmit={handleSubmit}>
           <div className={styles.controls}>

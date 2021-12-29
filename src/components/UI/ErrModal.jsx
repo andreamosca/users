@@ -11,16 +11,15 @@ const ErrModal = (props) => {
       <div className={styles.background}></div>
       <Card className={styles.dialog}>
         <header>
-          <h2>Titolo</h2>
+          <h2>{props.title}</h2>
         </header>
         <main>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Voluptatum, ab.
+            {props.content}
           </p>
         </main>
         <footer className={styles.footer}>
-          <Button>OK</Button>
+          <Button>{props.action}</Button>
         </footer>
       </Card>
     </div>
