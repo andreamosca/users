@@ -18,7 +18,7 @@ const NewUser = (props) => {
   const handleNameChange = (event) => setName(event.target.value);
   const handleAgeChange = (event) => setAge(event.target.value);
   return (
-    <Card>
+    <Card className={styles.newUser}>
       <form onSubmit={handleSubmit}>
         <div className={styles.controls}>
           <div className={styles.control}>
