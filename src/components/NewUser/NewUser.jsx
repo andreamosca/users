@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, useRef, Fragment } from "react";
 
 import Card from "../UI/Card";
 import Button from "../UI/Button";
@@ -7,11 +7,15 @@ import ErrModal from "../UI/ErrModal";
 import styles from "./NewUser.module.css";
 
 const NewUser = (props) => {
-  const [name, setName] = useState("");
-  const [age, setAge] = useState("");
+  const usernameRef = useRef();
+  const ageRef = useRef();
+  // const [name, setName] = useState("");
+  // const [age, setAge] = useState("");
   const [error, setError] = useState(null);
 
   const handleSubmit = (event) => {
+    const name = usernameRef.current.value; 
+    const age = ageRef.current.value; 
     event.preventDefault();
     if (name.trim().length === 0) {
       setError({
@@ -34,12 +38,12 @@ const NewUser = (props) => {
       name: name,
       age: age,
     });
-    setName("");
-    setAge("");
+    usernameRef.current.value = "";
+    ageRef.current.value = "";
   };
 
-  const handleNameChange = (event) => setName(event.target.value);
-  const handleAgeChange = (event) => setAge(event.target.value);
+  // const handleNameChange = (event) => setName(event.target.value);
+  // const handleAgeChange = (event) => setAge(event.target.value);
   const handleCloseErrModal = () => setError(null);
 
   return (
@@ -59,18 +63,16 @@ const NewUser = (props) => {
               <label htmlFor="username">Name</label>
               <input
                 id="username"
-                value={name}
-                onChange={handleNameChange}
                 type="text"
+                ref={usernameRef}
               />
             </div>
             <div className={styles.control}>
               <label htmlFor="age">Age (Years)</label>
               <input
                 id="age"
-                value={age}
-                onChange={handleAgeChange}
                 type="number"
+                ref={ageRef}
               />
             </div>
           </div>
